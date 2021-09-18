@@ -3,7 +3,7 @@ import {
   isTxError,
   Coin,
   MnemonicKey,
-  MsgBeginRedelegate
+  MsgExecuteContract
 } from "@terra-money/terra.js";
 
 /* START : CONFIG */
@@ -29,11 +29,15 @@ const wallet = terra.wallet(mk);
 console.log("wallet key is", wallet.key);
 
 // Construct contract
-const contract = new MsgBeginRedelegate(
+const contract = new MsgExecuteContract(
   Config.MY_WALLET_ADDRESS, // Sender wallet address
-  "terravaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy", // validatorSrcAddress
-  "terravaloper1vk20anceu6h9s00d27pjlvslz3avetkvnwmr35", // validatorDstAddress
-  new Coin('uluna', 50) //Redelegate amount
+  "terra1aewdkwdn34ekxqtqkz0cxap0y4zqz5qdsew5rq", // contract address
+  { 
+    DepositIntoPool: {} 
+  }, // handle msg
+  {
+    uusd: 100000000
+  } // coins
 );
 
 try{
@@ -62,5 +66,3 @@ try{
   console.log(e);
 
 }
-
-

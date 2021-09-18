@@ -8,14 +8,14 @@ import {
 
 /* START : CONFIG */
 import dotenv from 'dotenv'
-dotenv.config({path: '../../.env'})
-let config = process.env;
+dotenv.config({path: '../.env'})
+let Config = process.env;
 /* END : CONFIG */
 
 //Declare network configuration
 const terra = new LCDClient({
-  URL: config.LCDClientURL,
-  chainID: config.LCDClientChain,
+  URL: Config.LCDClientURL,
+  chainID: Config.LCDClientChain,
 });
 
 // Create a key out of a Mnemonic
