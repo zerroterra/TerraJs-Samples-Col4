@@ -27,11 +27,9 @@ const mk = new MnemonicKey({
 //Wallet can be created out of any key
 const wallet = terra.wallet(mk);
 
-console.log(fs.readFileSync('./contracts/my_first_contract.wasm').toString('base64')); //change filename to your contract
-
 const storeCode = new MsgStoreCode(
   wallet.key.accAddress,
-  fs.readFileSync('../contracts/my_first_contract.wasm').toString('base64')
+  fs.readFileSync('../contracts/spar_test.wasm').toString('base64')
 );
 
 try{
