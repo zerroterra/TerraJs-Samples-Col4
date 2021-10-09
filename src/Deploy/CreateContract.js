@@ -28,10 +28,13 @@ const mk = new MnemonicKey({
 const wallet = terra.wallet(mk);
 
 const instantiate = new MsgInstantiateContract(
-  wallet.key.accAddress,
-  9112, // code ID of deployed contract
+  wallet.key.accAddress, //sender
+  wallet.key.accAddress, //admin
+  10166, // code ID of deployed contract
   {
-    count: 0,
+    "owner": wallet.key.accAddress,
+    "validator": "terra1ya23p5cxtxwcfdrq4dmd2h0p5nc0vcl96tm0nw",
+    "tokens": "uluna"
   }, // InitMsg to execute contract
   { uluna: 1000000 }, // init coins
   false // migratable

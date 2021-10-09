@@ -31,12 +31,12 @@ console.log("wallet key is", wallet.key);
 // Construct contract
 const contract = new MsgExecuteContract(
   Config.MY_WALLET_ADDRESS, // Sender wallet address
-  "terra1aewdkwdn34ekxqtqkz0cxap0y4zqz5qdsew5rq", // contract address
-  { 
-    DepositIntoPool: {} 
+  "terra17m3d20fdwwzsc0ye706lm3xhdrwmm0sl87gkvr", // contract address
+  {
+    "token_send": {}
   }, // handle msg
   {
-    uusd: 100000000
+    uusd: 1000000
   } // coins
 );
 

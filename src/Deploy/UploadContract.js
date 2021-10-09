@@ -29,7 +29,7 @@ const wallet = terra.wallet(mk);
 
 const storeCode = new MsgStoreCode(
   wallet.key.accAddress,
-  fs.readFileSync('../contracts/spar_test.wasm').toString('base64')
+  fs.readFileSync('../contracts/spar_delegate.wasm').toString('base64')
 );
 
 try{

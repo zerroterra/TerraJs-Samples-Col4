@@ -11,6 +11,14 @@ $ npm install
 
 ## Usage
 
+### Contracts
+
+```bash
+$ node src/Deploy/UploadContract.js
+$ node src/Deploy/CreateContract.js
+$ node src/Deploy/MigrateContract.js
+```
+
 ### Luna Staking
 
 ```bash
